@@ -4,7 +4,8 @@
 	"description": "Get random Star Wars names",
 	"main": "src/index.js",
 	"scripts": {
-		"test": "mocha src/index.test.js -w"
+		"test": "mocha src/index.test.js",
+		"test-watch": "mocha src/index.test.js -w"
 	},
 	"repository": {
 		"type": "git",
