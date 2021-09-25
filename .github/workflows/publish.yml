@@ -7,7 +7,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [*]
+    branches: '*'
 
 jobs:
   quality:
@@ -28,7 +28,7 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run semantic-release
-      
+
   publish:
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/main' }}
@@ -41,8 +41,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run semantic-release
-        env: 
-         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-     
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
