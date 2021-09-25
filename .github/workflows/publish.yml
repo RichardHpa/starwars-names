@@ -27,7 +27,6 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm test
-      - run: npm run semantic-release
 
   publish:
     runs-on: ubuntu-latest
