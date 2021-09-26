@@ -40,5 +40,10 @@ describe('starwars-names', () => {
 				expect(starWars.all).to.include(item)
 			})
 		})
+
+		it('if number is longer than starWars.all length then it returns the whole list', () => {
+			const items = starWars.getList(100)
+			expect(items.length === starWars.all.length)
+		})
 	})
 })

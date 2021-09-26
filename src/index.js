@@ -21,7 +21,7 @@ function random(number) {
 }
 
 function getNum(number) {
-	if (number === undefined) {
+	if (number === undefined || number === starWarsNames.length) {
 		return starWarsNames
 	} else {
 		var items = []
