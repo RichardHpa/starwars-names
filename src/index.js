@@ -5,6 +5,7 @@ var getRandomItem = uniqueRandomArray(starWarsNames)
 module.exports = {
 	all: starWarsNames,
 	random: random,
+	getList: getNum,
 }
 
 function random(number) {
@@ -16,5 +17,17 @@ function random(number) {
 			randomItems.push(getRandomItem())
 		}
 		return randomItems
+	}
+}
+
+function getNum(number) {
+	if (number === undefined) {
+		return starWarsNames
+	} else {
+		var items = []
+		for (var i = 0; i < number - 1; i++) {
+			items.push(starWarsNames[i])
+		}
+		return items
 	}
 }

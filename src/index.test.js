@@ -23,13 +23,22 @@ describe('starwars-names', () => {
 			const randomItem = starWars.random()
 			expect(starWars.all).to.includes(randomItem)
 		})
+		it('should return an array of random items if passed a number', function () {
+			var randomItems = starWars.random(3)
+			expect(randomItems).to.have.length(3)
+			randomItems.forEach(function (item) {
+				expect(starWars.all).to.include(item)
+			})
+		})
 	})
 
-	it('should return an array of random items if passed a number', function () {
-		var randomItems = starWars.random(3)
-		expect(randomItems).to.have.length(3)
-		randomItems.forEach(function (item) {
-			expect(starWars.all).to.include(item)
+	describe('list', () => {
+		it('should return a list of 5 item from starWars.all', () => {
+			const items = starWars.getList(5)
+			expect(items.length === 5)
+			items.forEach(function (item) {
+				expect(starWars.all).to.include(item)
+			})
 		})
 	})
 })
