@@ -22,11 +22,11 @@ function random(number) {
 }
 
 function getNum(number) {
-	if (number === undefined || number === starWarsNames.length) {
+	if (number === undefined || number > starWarsNames.length) {
 		return starWarsNames
 	} else {
 		var items = []
-		for (var i = 0; i < number - 1; i++) {
+		for (var i = 0; i < number; i++) {
 			items.push(starWarsNames[i])
 		}
 		return items

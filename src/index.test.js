@@ -35,7 +35,7 @@ describe('starwars-names', () => {
 	describe('list', () => {
 		it('should return a list of 5 item from starWars.all', () => {
 			const items = starWars.getList(5)
-			expect(items.length === 5)
+			expect(items).to.have.length(5)
 			items.forEach(function (item) {
 				expect(starWars.all).to.include(item)
 			})
@@ -43,7 +43,7 @@ describe('starwars-names', () => {
 
 		it('if number is longer than starWars.all length then it returns the whole list', () => {
 			const items = starWars.getList(100)
-			expect(items.length === starWars.all.length)
+			expect(items).to.have.length(starWars.all.length)
 		})
 	})
 })
