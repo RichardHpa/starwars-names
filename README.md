@@ -5,6 +5,7 @@
 [![forks - starwars-names](https://img.shields.io/github/forks/RichardHpa/starwars-names?style=social)](https://github.com/RichardHpa/starwars-names)
 
 [![Node.js CI](https://github.com/RichardHpa/starwars-names/workflows/Node.js%20CI/badge.svg)](https://github.com/RichardHpa/starwars-names/actions?query=workflow:"Node.js+CI")
+[![codecov coverage](https://img.shields.io/codecov/c/github/RichardHpa/starwars-names.svg?style=flat-square)](https://codecov.io/github/RichardHpa/starwars-names)
 [![GitHub release](https://img.shields.io/github/release/RichardHpa/starwars-names?include_prereleases=&sort=semver&color=blue)](https://github.com/RichardHpa/starwars-names/releases/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 

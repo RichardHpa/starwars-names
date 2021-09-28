@@ -12,7 +12,10 @@
 		"commit": "cz",
 		"prepare": "husky install",
 		"prebuild": "rimraf dist",
-		"build": "babel src -d dist --ignore 'src/**/*.test.js' --copy-files --no-copy-ignored"
+		"build": "npm-run-all --parallel build:*",
+		"build:main": "babel src -d dist --ignore 'src/**/*.test.js' --copy-files --no-copy-ignored",
+		"build:umd": "webpack --output-filename index.umd.js --mode development",
+		"build:umd.min": "webpack --output-filename index.umd.min.js --mode production"
 	},
 	"repository": {
 		"type": "git",
@@ -40,23 +43,22 @@
 		"@babel/cli": "^7.15.7",
 		"@babel/core": "^7.15.5",
 		"@babel/preset-env": "^7.15.6",
+		"@babel/register": "^7.15.3",
 		"babel-jest": "^27.2.2",
+		"babel-loader": "^8.2.2",
 		"chai": "^4.3.4",
-		"codecov.io": "^0.1.6",
 		"cz-conventional-changelog": "^3.3.0",
 		"husky": "^7.0.2",
 		"jest": "^27.2.2",
+		"npm-run-all": "^4.1.5",
 		"rimraf": "^3.0.2",
-		"semantic-release": "^18.0.0"
+		"semantic-release": "^18.0.0",
+		"webpack": "^5.55.0",
+		"webpack-cli": "^4.8.0"
 	},
 	"config": {
 		"commitizen": {
 			"path": "./node_modules/cz-conventional-changelog"
-		}
-	},
-	"jest": {
-		"transform": {
-			"^.+\\.[t|j]sx?$": "babel-jest"
 		}
 	},
 	"babel": {
