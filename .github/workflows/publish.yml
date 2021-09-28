@@ -31,6 +31,9 @@ jobs:
       - run: npm run check-coverage
       - run: npm run build
 
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+
   publish:
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/main' }}
