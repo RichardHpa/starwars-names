@@ -1,10 +1,10 @@
-const expect = require('chai').expect
-const starWars = require('./index')
+import { expect } from 'chai'
+import { all, random, getList } from './index'
 
 describe('starwars-names', () => {
 	describe('all', () => {
 		it('should be an array of strings', () => {
-			expect(starWars.all).to.satisfy(isArrayOfStrings)
+			expect(all).to.satisfy(isArrayOfStrings)
 
 			function isArrayOfStrings(array) {
 				return array.every((item) => {
@@ -14,36 +14,36 @@ describe('starwars-names', () => {
 		})
 
 		it('should contain `Luke Skywalker`', () => {
-			expect(starWars.all).to.includes('Luke Skywalker')
+			expect(all).to.includes('Luke Skywalker')
 		})
 	})
 
 	describe('random', () => {
 		it('should return a random item from starWars.all', () => {
-			const randomItem = starWars.random()
-			expect(starWars.all).to.includes(randomItem)
+			const randomItem = random()
+			expect(all).to.includes(randomItem)
 		})
 		it('should return an array of random items if passed a number', function () {
-			var randomItems = starWars.random(3)
+			var randomItems = random(3)
 			expect(randomItems).to.have.length(3)
 			randomItems.forEach(function (item) {
-				expect(starWars.all).to.include(item)
+				expect(all).to.include(item)
 			})
 		})
 	})
 
 	describe('list', () => {
 		it('should return a list of 5 item from starWars.all', () => {
-			const items = starWars.getList(5)
+			const items = getList(5)
 			expect(items).to.have.length(5)
 			items.forEach(function (item) {
-				expect(starWars.all).to.include(item)
+				expect(all).to.include(item)
 			})
 		})
 
 		it('if number is longer than starWars.all length then it returns the whole list', () => {
-			const items = starWars.getList(100)
-			expect(items).to.have.length(starWars.all.length)
+			const items = getList(100)
+			expect(items).to.have.length(all.length)
 		})
 	})
 })

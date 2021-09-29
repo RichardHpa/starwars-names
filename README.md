@@ -25,12 +25,12 @@ npm i richardhpa-starwars-names
 ## Usage
 
 ```javascript
-var names = require('starwars-names')
+import { all, random, getList } from 'richardhpa-starwars-names'
 
-var allNames = names.all
-var randomName = names.random()
-var threeRandomNames = names.random(3)
-var listNames = names.getList(3)
+const allNames = all
+const randomName = random()
+const threeRandomNames = random(3)
+const listNames = getList(3)
 ```
 
 ## License

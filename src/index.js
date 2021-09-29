@@ -1,15 +1,11 @@
 import uniqueRandomArray from 'unique-random-array'
 import starWarsNames from './starwars-names.json'
 
-var getRandomItem = uniqueRandomArray(starWarsNames)
+const getRandomItem = uniqueRandomArray(starWarsNames)
 
-module.exports = {
-	all: starWarsNames,
-	random: random,
-	getList: getNum,
-}
+export const all = starWarsNames
 
-function random(number) {
+export const random = (number) => {
 	if (number === undefined) {
 		return getRandomItem()
 	} else {
@@ -21,7 +17,7 @@ function random(number) {
 	}
 }
 
-function getNum(number) {
+export const getList = (number) => {
 	if (number === undefined || number > starWarsNames.length) {
 		return starWarsNames
 	} else {
