@@ -28,3 +28,13 @@ export const getList = (number) => {
 		return items
 	}
 }
+
+export const searchCharacters = (query) => {
+	if (query === undefined) {
+		return starWarsNames
+	} else {
+		return starWarsNames.filter((name) =>
+			name.toLowerCase().includes(query.toLowerCase())
+		)
+	}
+}

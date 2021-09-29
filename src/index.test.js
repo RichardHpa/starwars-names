@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { all, random, getList } from './index'
+import { all, random, getList, searchCharacters } from './index'
 
 describe('starwars-names', () => {
 	describe('all', () => {
@@ -44,6 +44,30 @@ describe('starwars-names', () => {
 		it('if number is longer than starWars.all length then it returns the whole list', () => {
 			const items = getList(100)
 			expect(items).to.have.length(all.length)
+		})
+	})
+
+	describe('searchCharacters', () => {
+		it('should return everything if no query is specified', () => {
+			const items = searchCharacters()
+			expect(items).to.have.length(all.length)
+		})
+
+		it('should return Luke Skywalker if searching for luke', () => {
+			const items = searchCharacters('luke')
+			expect(items).to.includes('Luke Skywalker')
+		})
+
+		it('should return `Bastila Shan`,	`Satele Shan`,`Shaak Ti` if searching for SHA', () => {
+			const items = searchCharacters('SHA')
+			expect(items).to.includes('Bastila Shan')
+			expect(items).to.includes('Satele Shan')
+			expect(items).to.includes('Shaak Ti')
+		})
+
+		it('should return an empty list if nothing is found', () => {
+			const items = searchCharacters('Adam')
+			expect(items).to.have.length(0)
 		})
 	})
 })
